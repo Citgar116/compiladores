@@ -9,25 +9,25 @@ import java.io.FileReader;
 
 public class leerexpresion {
 
-    char[] arreglo;
-    int posicion;
+    char[] arreglo; 
+    int posicion; 
 
-    public leerexpresion(String archivo){
-        String texto = "";
-        posicion = 0;
+    public leerexpresion(String archivo){ 
+        String texto = ""; 
+        posicion = 0; 
 
-        try {
+        try { 
             
-            FileReader leer = new FileReader(archivo);
-            int c;
+            FileReader leer = new FileReader(archivo); 
+            int c; 
 
             while((c = leer.read()) != -1){
                 texto += (char)c;
             }
+    
+            leer.close(); 
 
-            leer.close();
-
-            arreglo = texto.toCharArray();
+            arreglo = texto.toCharArray();  
             
         }
         catch (Exception e) {
@@ -37,9 +37,9 @@ public class leerexpresion {
 
     public char leerCaracter(){
         
-        if(posicion < arreglo.length){
-            char c = arreglo[posicion];
-            posicion++;
+        if(posicion < arreglo.length){ 
+            char c = arreglo[posicion]; 
+            posicion++; 
             return c;
         }
         else{
@@ -48,25 +48,69 @@ public class leerexpresion {
 
     }
 
+    public void Minusculas(){
+        for (int i = 97; i <= 122; i++) {
+            char letra = (char) i;
+            System.out.println(letra);
+        }
+    }
+
+    public void Mayusculas(){
+        for (int i = 65; i <= 90; i++) {
+            char letra = (char) i;
+            System.out.println(letra);
+        }
+    }
+
+    public void Numeros(){
+        for (int i = 48; i <= 57; i++) {
+            char numero = (char) i;
+            System.out.println(numero);
+        }
+    }
+
+    public void Simbolos(){
+        for (int i = 33; i <= 47; i++) {
+            char simbolo = (char) i;
+            System.out.println(simbolo);
+        }
+    }
+    
+    public void Espacios(){
+        for (int i = 32; i <= 32; i++) {
+            char espacio = (char) i;
+            System.out.println(espacio);
+        }
+    }
+
+
+    public boolean PalabrasReservadas(char[] arreglo){
+
+        while(posicion < arreglo.length){ 
+           
+                       
+        }
+        else{ 
+            return false;            
+
+        }
+
+    }
+
+        
     public String[] obtenerTextoCompleto(){
         return new String[]{new String(arreglo)};   
     }
-
-    public class Main{
-        
         public static void main(String[] args) {
             leerexpresion archivo = new leerexpresion("expresion.txt");
 
            System.out.println(archivo.leerCaracter());
            System.out.println(archivo.leerCaracter());
            System.out.println(java.util.Arrays.toString(archivo.obtenerTextoCompleto()));
-           
+         
     }
- }
+
 }
-
-
-
 
 
 // Para el ejercicio 5, tenemos que registrar 3 expresiones segun la reglas del archivo docs, 
