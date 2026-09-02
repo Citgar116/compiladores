@@ -48,8 +48,8 @@ public class leerexpresion {
 
     }
 
-    public String obtenerTextoCompleto(){
-        return new String(arreglo);   
+    public String[] obtenerTextoCompleto(){
+        return new String[]{new String(arreglo)};   
     }
 
     public class Main{
@@ -59,9 +59,8 @@ public class leerexpresion {
 
            System.out.println(archivo.leerCaracter());
            System.out.println(archivo.leerCaracter());
-           System.out.println(archivo.obtenerTextoCompleto());
-        
-            
+           System.out.println(java.util.Arrays.toString(archivo.obtenerTextoCompleto()));
+           
     }
  }
 }
