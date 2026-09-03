@@ -98,7 +98,7 @@ class Clasificador {
             char c = palabra.charAt(i);
 
             if (esPunto(c)) {
-                //Si ya había un punto o el punto está al final, es inválido
+                //Si ya habia un punto o el punto está al final, no es valido
                 if (tienePunto || i == palabra.length() - 1) {
                     return false;
                 }
@@ -130,11 +130,11 @@ class Clasificador {
     // Clasifica una palabra
     public String clasificar(String palabra) {
         if (esPalabraReservada(palabra)) {
-            return "Palabra reservada";
+            return "palabra reservada";
         } else if (esDigito(palabra)) {
-            return "Digito / Número";
+            return "Digito/numero";
         } else if (esIdentificador(palabra)) {
-            return "Identificador";
+            return "identificador";
         } else {
             return "No entra en ninguna";
         }
@@ -156,9 +156,14 @@ public class Main {
 
         System.out.println("Texto completo:" + Arrays.toString(archivo.obtenerTextoCompleto()));
 
-        //Clasificacion ejemplo
-        String palabra = "Variable1";
-        System.out.println("Clasificación de '" + palabra + "': " + clasificador.clasificar(palabra));
+
+        //Clasificacion de palabras del txt (Hola deberia ser palabra reservada y mundo identificador)
+        String[] palabras = archivo.obtenerTextoCompleto()[0].split("\\s+"); // \\s  separa por espacios, tab y saltos
+        for (String palabra : palabras) {
+            String clasificacion = clasificador.clasificar(palabra);
+            System.out.println(palabra + ", es : " + clasificacion);
+        }
+        
 
     }
 }
