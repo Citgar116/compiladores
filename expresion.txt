@@ -1,3 +1,13 @@
 Hola mundo ejemplo HAHA
 Prueba salto linea
-iDENTIFICADOR32 .32
+iDENTIFICADOR32 
+0.32.
+.
+3.2
+.25
+5
+5.0
+Reservadainvalida1
+87fallo .
+87.letra
+87.
